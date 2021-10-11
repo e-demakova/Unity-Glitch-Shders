@@ -16,8 +16,6 @@ namespace Effects.Digital
             [Range(0, 1)] public float Size;
             [Range(0, 1)] public float UpdateSpeed;
 
-            public Vector2Int TextureSize;
-
             [Header("Color Drift")]
             [Range(-1, 1)] public float ColorDrift;
             public bool R;
@@ -27,6 +25,7 @@ namespace Effects.Digital
 
         public Values Settings;
 
+        [SerializeField] private Vector2Int _textureSize;
         [SerializeField] private Shader _shader;
 
         private Material _material;
@@ -55,7 +54,7 @@ namespace Effects.Digital
 
         private Texture2D CreateNoiseTexture()
         {
-            var texture = new Texture2D(Settings.TextureSize.x, Settings.TextureSize.y, TextureFormat.ARGB32, false);
+            var texture = new Texture2D(_textureSize.x, _textureSize.y, TextureFormat.ARGB32, false);
             texture.hideFlags = HideFlags.DontSave;
             texture.wrapMode = TextureWrapMode.Clamp;
             texture.filterMode = FilterMode.Point;

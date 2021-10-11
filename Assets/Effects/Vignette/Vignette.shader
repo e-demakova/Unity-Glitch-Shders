@@ -60,7 +60,7 @@ Shader "Hidden/Vignetting"
 
         color.g = tex2D(_MainTex, uvG).g;
         color.r = tex2D(_MainTex, uvR).r;
-
+        
         colorBlur.g = tex2D(_VignetteTex, uvG).g;
         colorBlur.r = tex2D(_VignetteTex, uvR).r;
         

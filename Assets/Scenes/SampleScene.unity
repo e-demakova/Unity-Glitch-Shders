@@ -215,6 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189153705}
+  - component: {fileID: 1189153706}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -238,6 +239,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1189153706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189153704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5720907660bad4a881eced73eeb941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1311786013}
+  _grayscale: {fileID: 1311786012}
+  _color: {fileID: 1311786010}
+  _digitalA: {fileID: 1311786009}
+  _digitalB: {fileID: 1311786008}
+  _goToNormalDuration: 5
+  _grayscaleValues:
+    Color:
+      ColorDrift: 0.144
+      Distortion: 0
+      DriftSpeed: 0
+      DriftDirection: 0
+      R: 0
+      G: 0
+      B: 0
+    DigitalA:
+      Intensity: 0
+      SafeArea: 0
+      Shift: 0
+      Size: 0
+      UpdateSpeed: 0
+      ColorDrift: 0
+      R: 0
+      G: 0
+      B: 0
+    DigitalB:
+      Intensity: 0
+      SafeArea: 0
+      Shift: 0
+      Size: 0
+      UpdateSpeed: 0
+      ColorDrift: 0
+      R: 0
+      G: 0
+      B: 0
+    Duration: 1
+  _extraGlitchValues:
+    Color:
+      ColorDrift: 0
+      Distortion: 0
+      DriftSpeed: 0
+      DriftDirection: 0
+      R: 0
+      G: 0
+      B: 0
+    DigitalA:
+      Intensity: 0
+      SafeArea: 0
+      Shift: 0
+      Size: 0
+      UpdateSpeed: 0
+      ColorDrift: 0
+      R: 0
+      G: 0
+      B: 0
+    DigitalB:
+      Intensity: 0
+      SafeArea: 0
+      Shift: 0
+      Size: 0
+      UpdateSpeed: 0
+      ColorDrift: 0
+      R: 0
+      G: 0
+      B: 0
+    Duration: 0
 --- !u!1 &1311786006
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,16 +352,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Settings:
-    Intensity: 0
-    SafeArea: 0
-    Shift: 0
-    Size: 0
-    UpdateSpeed: 0
-    TextureSize: {x: 0, y: 0}
-    ColorDrift: 0
-    R: 0
+    Intensity: 0.38
+    SafeArea: 0.24
+    Shift: 0.24
+    Size: 0.3
+    UpdateSpeed: 0.09
+    ColorDrift: 0.48
+    R: 1
     G: 0
     B: 0
+  _textureSize: {x: 2, y: 10}
   _shader: {fileID: 4800000, guid: ba40dc630e1d9417cb9ea22586ece1e1, type: 3}
 --- !u!114 &1311786009
 MonoBehaviour:
@@ -297,16 +376,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Settings:
-    Intensity: 0
-    SafeArea: 0
-    Shift: 0
-    Size: 0
-    UpdateSpeed: 0
-    TextureSize: {x: 64, y: 2}
-    ColorDrift: 0
-    R: 0
+    Intensity: 0.11
+    SafeArea: 0.46
+    Shift: 0.08
+    Size: 0.36
+    UpdateSpeed: 0.59
+    ColorDrift: -0.21
+    R: 1
     G: 0
     B: 0
+  _textureSize: {x: 32, y: 25}
   _shader: {fileID: 4800000, guid: ba40dc630e1d9417cb9ea22586ece1e1, type: 3}
 --- !u!114 &1311786010
 MonoBehaviour:
@@ -323,7 +402,7 @@ MonoBehaviour:
   Settings:
     ColorDrift: 0.134
     Distortion: 24
-    DriftSpeed: 0
+    DriftSpeed: 1.9
     DriftDirection: 0
     R: 1
     G: 0
@@ -344,7 +423,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311786006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be858a1afc5687b44a08cf2167a33a04, type: 3}
   m_Name: 
@@ -855,8 +934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02e519dc1b605341beb798a12b44134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlurArea: 0.374
-  Blur: 0.415
+  BlurArea: 0.49
+  Blur: 0.58
   ChromaticAberration: 10
   AberrationMultiplier: -1
   _vignette: {fileID: 4800000, guid: 9b160bf900c088d49b7c5e705e2ce7fc, type: 3}

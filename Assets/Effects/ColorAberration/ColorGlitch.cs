@@ -1,5 +1,4 @@
 using System;
-using Effects.Digital;
 using UnityEngine;
 
 namespace Effects.ColorAberration
