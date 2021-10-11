@@ -345,6 +345,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/VSSettingsProvider.ref.dll"
 "Assets/Effects/ColorAberration/ColorGlitch.cs"
 "Assets/Effects/Digital/DigitalGlitch.cs"
+"Assets/Effects/EffectsValues.cs"
 "Assets/Effects/Jitter/JitterGlitch.cs"
 "Assets/Effects/MainCamera.cs"
 "Assets/Effects/NoPropertyShader.cs"

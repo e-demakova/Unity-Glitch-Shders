@@ -47,6 +47,7 @@
      <Compile Include="Assets\Effects\Vignette\VignetteGlitch.cs" />
      <Compile Include="Assets\Effects\NoPropertyShader.cs" />
      <Compile Include="Assets\Effects\MainCamera.cs" />
+     <Compile Include="Assets\Effects\EffectsValues.cs" />
      <None Include="Assets\Effects\Grayscale\Grayscale.shader" />
      <None Include="Assets\Effects\Sprites\SpriteGlitch.shader" />
      <None Include="Assets\Effects\Vignette\SeparableBlur.shader" />

@@ -257,66 +257,8 @@ MonoBehaviour:
   _digitalA: {fileID: 1311786009}
   _digitalB: {fileID: 1311786008}
   _goToNormalDuration: 5
-  _grayscaleValues:
-    Color:
-      ColorDrift: 0.144
-      Distortion: 0
-      DriftSpeed: 0
-      DriftDirection: 0
-      R: 0
-      G: 0
-      B: 0
-    DigitalA:
-      Intensity: 0
-      SafeArea: 0
-      Shift: 0
-      Size: 0
-      UpdateSpeed: 0
-      ColorDrift: 0
-      R: 0
-      G: 0
-      B: 0
-    DigitalB:
-      Intensity: 0
-      SafeArea: 0
-      Shift: 0
-      Size: 0
-      UpdateSpeed: 0
-      ColorDrift: 0
-      R: 0
-      G: 0
-      B: 0
-    Duration: 1
-  _extraGlitchValues:
-    Color:
-      ColorDrift: 0
-      Distortion: 0
-      DriftSpeed: 0
-      DriftDirection: 0
-      R: 0
-      G: 0
-      B: 0
-    DigitalA:
-      Intensity: 0
-      SafeArea: 0
-      Shift: 0
-      Size: 0
-      UpdateSpeed: 0
-      ColorDrift: 0
-      R: 0
-      G: 0
-      B: 0
-    DigitalB:
-      Intensity: 0
-      SafeArea: 0
-      Shift: 0
-      Size: 0
-      UpdateSpeed: 0
-      ColorDrift: 0
-      R: 0
-      G: 0
-      B: 0
-    Duration: 0
+  _grayscaleValues: {fileID: 11400000, guid: 756cec0890cad4e4a92ab5fbeba1ce6f, type: 2}
+  _extraGlitchValues: {fileID: 11400000, guid: 4d49b0f3d30827643a6ab895b54fa99c, type: 2}
 --- !u!1 &1311786006
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,13 +297,13 @@ MonoBehaviour:
     Intensity: 0.38
     SafeArea: 0.24
     Shift: 0.24
-    Size: 0.3
+    Size: 0.76
     UpdateSpeed: 0.09
     ColorDrift: 0.48
     R: 1
     G: 0
     B: 0
-  _textureSize: {x: 2, y: 10}
+  _textureSize: {x: 5, y: 10}
   _shader: {fileID: 4800000, guid: ba40dc630e1d9417cb9ea22586ece1e1, type: 3}
 --- !u!114 &1311786009
 MonoBehaviour:
