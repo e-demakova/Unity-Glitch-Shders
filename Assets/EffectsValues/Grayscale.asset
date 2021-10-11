@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beba164e42784f63bc4a207efb8517e6, type: 3}
+  m_Name: Grayscale
+  m_EditorClassIdentifier: 
+  Color:
+    ColorDrift: 0
+    Distortion: 0
+    DriftSpeed: 0
+    DriftDirection: 0
+    R: 0
+    G: 0
+    B: 0
+  DigitalA:
+    Intensity: 0
+    SafeArea: 0
+    Shift: 0
+    Size: 0
+    UpdateSpeed: 0
+    ColorDrift: 0
+    R: 0
+    G: 0
+    B: 0
+  DigitalB:
+    Intensity: 0
+    SafeArea: 0
+    Shift: 0
+    Size: 0
+    UpdateSpeed: 0
+    ColorDrift: 0
+    R: 0
+    G: 0
+    B: 0
+  Duration: 0
