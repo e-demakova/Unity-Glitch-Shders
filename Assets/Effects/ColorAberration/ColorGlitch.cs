@@ -1,4 +1,5 @@
 using System;
+using Effects.Digital;
 using UnityEngine;
 
 namespace Effects.ColorAberration
@@ -14,16 +15,22 @@ namespace Effects.ColorAberration
             Diagonal
         }
 
-        [Range(0, 0.5f)] public float ColorDrift;
-        [Range(0, 50)] public int Distortion;
-        [Range(0, 50)] public float DriftSpeed;
-        public Direction DriftDirection;
+        [Serializable]
+        public struct Values
+        {
+            [Range(0, 0.5f)] public float ColorDrift;
+            [Range(0, 50)] public int Distortion;
+            [Range(0, 50)] public float DriftSpeed;
+            public Direction DriftDirection;
 
-        [Header("Drifted colors")]
-        public bool R;
-        public bool G;
-        public bool B;
+            [Header("Drifted colors")]
+            public bool R;
+            public bool G;
+            public bool B;
+        }
 
+        public Values Settings;
+        
         private static readonly int IsVertical = Shader.PropertyToID("_IsVertical");
         private static readonly int IsHorizontal = Shader.PropertyToID("_IsHorizontal");
         private static readonly int ColorDriftId = Shader.PropertyToID("_ColorDrift");
@@ -55,15 +62,15 @@ namespace Effects.ColorAberration
         {
             DefineDirection();
             DefineColors();
-            
-            var colorDriftVector = new Vector2(ColorDrift * 0.04f, Time.time * DriftSpeed);
+
+            var colorDriftVector = new Vector2(Settings.ColorDrift * 0.04f, Time.time * Settings.DriftSpeed);
             _material.SetVector(ColorDriftId, colorDriftVector);
-            _material.SetInt(DistortionId, Distortion);
+            _material.SetInt(DistortionId, Settings.Distortion);
         }
 
         private void DefineDirection()
         {
-            switch (DriftDirection)
+            switch (Settings.DriftDirection)
             {
                 case Direction.Horizontal:
                     _material.SetInt(IsHorizontal, 1);
@@ -84,9 +91,9 @@ namespace Effects.ColorAberration
 
         private void DefineColors()
         {
-            _material.SetInt(RedId, R ? 1 : 0);
-            _material.SetInt(GreenId, G ? 1 : 0);
-            _material.SetInt(BlueId, B ? 1 : 0);
+            _material.SetInt(RedId, Settings.R ? 1 : 0);
+            _material.SetInt(GreenId, Settings.G ? 1 : 0);
+            _material.SetInt(BlueId, Settings.B ? 1 : 0);
         }
     }
 }

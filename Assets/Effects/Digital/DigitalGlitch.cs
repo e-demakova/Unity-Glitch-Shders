@@ -1,23 +1,31 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Effects.Digital
 {
     [RequireComponent(typeof(Camera))]
     public class DigitalGlitch : MonoBehaviour
     {
-        [Range(0, 1)] public float Intensity;
-        [Range(0, 1)] public float SafeArea;
-        [Range(0, 1f)] public float Shift;
-        [Range(0, 1)] public float Size;
-        [Range(0, 1)] public float UpdateSpeed;
+        [Serializable]
+        public struct Values
+        {
+            [Range(0, 1)] public float Intensity;
+            [Range(0, 1)] public float SafeArea;
+            [Range(0, 1)] public float Shift;
+            [Range(0, 1)] public float Size;
+            [Range(0, 1)] public float UpdateSpeed;
 
-        public Vector2Int TextureSize = new Vector2Int(64, 32);
+            public Vector2Int TextureSize;
 
-        [Header("Color Drift")]
-        [Range(-1, 1)] public float ColorDrift;
-        public bool R;
-        public bool G;
-        public bool B;
+            [Header("Color Drift")]
+            [Range(-1, 1)] public float ColorDrift;
+            public bool R;
+            public bool G;
+            public bool B;
+        }
+
+        public Values Settings;
 
         [SerializeField] private Shader _shader;
 
@@ -47,7 +55,7 @@ namespace Effects.Digital
 
         private Texture2D CreateNoiseTexture()
         {
-            var texture = new Texture2D(TextureSize.x, TextureSize.y, TextureFormat.ARGB32, false);
+            var texture = new Texture2D(Settings.TextureSize.x, Settings.TextureSize.y, TextureFormat.ARGB32, false);
             texture.hideFlags = HideFlags.DontSave;
             texture.wrapMode = TextureWrapMode.Clamp;
             texture.filterMode = FilterMode.Point;
@@ -62,7 +70,7 @@ namespace Effects.Digital
             {
                 for (var x = 0; x < _noiseTexture.width; x++)
                 {
-                    if (Random.value > Size)
+                    if (Random.value > Settings.Size)
                         color = RandomColor();
                     _noiseTexture.SetPixel(x, y, color);
                 }
@@ -76,11 +84,11 @@ namespace Effects.Digital
             _material ??= CreateMaterial();
             _noiseTexture ??= CreateNoiseTexture();
 
-            _material.SetFloat(IntensityId, Intensity);
-            _material.SetFloat(SafeAreaId, SafeArea);
-            _material.SetFloat(ShiftId, Shift / 2);
+            _material.SetFloat(IntensityId, Settings.Intensity);
+            _material.SetFloat(SafeAreaId, Settings.SafeArea);
+            _material.SetFloat(ShiftId, Settings.Shift / 2);
             _material.SetTexture(NoiseTexId, _noiseTexture);
-            _material.SetVector(ColorDriftId, Vector2.one * ColorDrift / 8);
+            _material.SetVector(ColorDriftId, Vector2.one * Settings.ColorDrift / 8);
             DefineColors();
 
             Graphics.Blit(source, destination, _material);
@@ -91,15 +99,15 @@ namespace Effects.Digital
             _material ??= CreateMaterial();
             _noiseTexture ??= CreateNoiseTexture();
 
-            if (Random.value < UpdateSpeed)
+            if (Random.value < Settings.UpdateSpeed)
                 UpdateNoiseTexture();
         }
 
         private void DefineColors()
         {
-            _material.SetInt(RedId, R ? 1 : 0);
-            _material.SetInt(GreenId, G ? 1 : 0);
-            _material.SetInt(BlueId, B ? 1 : 0);
+            _material.SetInt(RedId, Settings.R ? 1 : 0);
+            _material.SetInt(GreenId, Settings.G ? 1 : 0);
+            _material.SetInt(BlueId, Settings.B ? 1 : 0);
         }
     }
 }
