@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a02e519dc1b605341beb798a12b44134
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _vignette: {fileID: 4800000, guid: 9b160bf900c088d49b7c5e705e2ce7fc, type: 3}
+  - _colorAberrations: {fileID: 4800000, guid: 339c43d47c08c2f4abb888ebbba966a3, type: 3}
+  - _separateBlur: {fileID: 4800000, guid: d938a15cb8c5d504d8349a7e7b1a2453, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
